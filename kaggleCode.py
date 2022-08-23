@@ -219,7 +219,8 @@ for batch_image, batch_label in train_data.take(1):
     
     
     
-    
+#https://keras.io/api/layers/
+#https://www.kaggle.com/arman170616    
 
 
 
