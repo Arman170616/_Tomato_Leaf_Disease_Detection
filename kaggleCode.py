@@ -120,6 +120,9 @@ model = models.Sequential([
 ])
 model.build(input_shape = input_shape)
 
+#The rectified linear activation function or ReLU for short is a piecewise linear function that will output the input directly if it is positive, otherwise, it will output zero.
+#ReLU in hidden layer to avoid vanishing gradient problem and better computation performance , and Softmax function use in last output layer .
+
 
 model.summary()
 
@@ -130,6 +133,17 @@ model.compile(
     loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits = False), 
     metrics = ['accuracy'])
 
+#Adam is a replacement optimization algorithm for stochastic gradient descent for training deep learning models. 
+#Adam combines the best properties of the AdaGrad and RMSProp algorithms to provide an optimization algorithm that 
+#can handle sparse gradients on noisy problems.
+
+
+# a loss function is a measure of how good your prediction model does in terms of being able to predict the expected outcome(or value). 
+# We convert the learning problem into an optimization problem, define a loss function and then optimize the algorithm to minimize the loss function.
+
+
+#The cost function is the technique of evaluating “the performance of our algorithm/model”. It takes both predicted outputs by the model and actual 
+#outputs and calculates how much wrong the model was in its prediction. It outputs a higher number if our predictions differ a lot from the actual values.
 
 history = model.fit(
 train_data, epochs = Epochs, batch_size = Batch_Size, verbose = 1, validation_data = val_data)
